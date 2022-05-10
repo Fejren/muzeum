@@ -1,0 +1,25 @@
+<div class="container-fluid" style="margin-top: 1rem;margin-bottom: 1rem;height: 100%">
+  <div class="row">
+    <div class="col" style="margin-left: 10%;margin-right: 10%;width: auto;">
+      <div class="phCard card-body">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <h3 class="text-center">Skontaktuj się z nami</h3>
+            <hr>
+            {{ formset.name }}
+            <hr>
+            {{ formset.email }}
+            <hr>
+            {{ formset.title }}
+            <hr>
+            <p>Treść wiadomości:</p>
+            <textarea name="message" required="id_message" class="form-control"></textarea>
+            <hr>
+            {{ formset.check }} Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z ustawą o ochronie danych osobowych w związku z wysłaniem pytania poprzez formularz kontaktowy.
+            <hr>
+            <input class="btn btn-success" type="submit" name="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+{% extends 'muzeum/base.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static 'css/articles.css' %}" rel="stylesheet">
+
+<div class="container-fluid" style="min-height: 100vh">
+  {% if news %}
+    {% for article in news %}
+    <div class="card">
+      <img src="{{ article.picture.url }}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title text-center">{{ article.title }}</h5>
+          <hr>
+        <button type="button" class="collapsible">Przeczytaj artykuł</button>
+            <div class="content">
+              <p>{{ article.body|safe }}</p>
+            </div>
+          <hr>
+          <p class="card-text text-center">Dodano: {{ article.publish }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  {% else %}
+    <h1 class="text-center" style="color: white; margin-top: 1rem;">W tej chwili nie ma żadnego artykułu</h1>
+  {% endif %}
+
+{#<button onclick="topFunction()" id="myBtn" title="Do góry"><i class="fa fa-angle-up"></i></button>#}
+    {% include "muzeum/components/pagination.html" with page=news %}
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{#    <script type="text/javascript" src="{% static 'js/topbutton.js' %}"></script>#}
+    <script type="text/javascript" src="{% static 'js/collapsible.js' %}"></script>
+{% endblock %}

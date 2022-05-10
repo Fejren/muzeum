@@ -1,0 +1,47 @@
+.navbar-brand{
+    font: 400 20px/1.8 "Segoe UI"
+}
+body, html {
+  font: 400 15px/1.8 "Lato", sans-serif;
+  height: 100%;
+  margin: 0;
+  color: #777;
+}
+a {color: black;}
+a:link {text-decoration: none}
+a:visited {text-decoration: none}
+a:active {text-decoration: none}
+a:hover {text-decoration: none; color: black}
+.BackgroundImg-1{
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #FFF;
+}
+.caption span.border {
+  color: #000 !important;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #FFF;
+}
+@media only screen and (max-device-width: 1024px) {
+  .BackgroundImg-1{
+    background-attachment: scroll;
+  }
+}

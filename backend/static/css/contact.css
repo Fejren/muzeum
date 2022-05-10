@@ -1,0 +1,14 @@
+.csp {
+  height: 100%;
+}
+.form-control{
+  background-color: #BDBDBD
+}
+.form-control:focus{
+  background-color: #DEDEDE;
+}
+.phCard{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #CFCFCF;
+}

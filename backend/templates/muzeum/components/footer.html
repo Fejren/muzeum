@@ -1,0 +1,39 @@
+ <footer class="text-center text-lg-start text-white" style="background-color: #555555">
+    <div class="container" style="background-color: #555555">
+      <section>
+        <div class="row">
+          <hr class="w-100 clearfix d-md-none" />
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Strony</h6>
+            <p>
+              <a href="{% url 'gallery' %}" class="text-white">Galeria</a>
+            </p>
+            <p>
+              <a href="{% url 'articles' %}" class="text-white">Aktualności</a>
+            </p>
+            <p>
+              <a href="{% url 'contact' %}" class="text-white">Informacje i kontakt</a>
+            </p>
+          </div>
+          <hr class="w-100 clearfix d-md-none" />
+          <hr class="w-100 clearfix d-md-none" />
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <a href="{% url 'contact' %}" style="color: white"><h6 class="text-uppercase mb-4 font-weight-bold">Kontakt</h6></a>
+            <p><i class="fas fa-home mr-3"></i> Sosnowiec, ul. Jagiellońska 13, sala nr: *</p>
+            <p><i class="fas fa-envelope mr-3"></i> muztelkom@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> 999 999 999</p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Obserwuj nas</h6>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="https://www.facebook.com/muztelkom" role="button"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="https://www.instagram.com/muztelkom/" role="button"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">&copy {% now 'Y' %}
+        <a class="text-white" href="{% url 'home' %}">MuzTelKom.pl</a>
+    </div>
+  </footer>
