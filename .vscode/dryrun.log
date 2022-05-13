@@ -1,0 +1,5 @@
+make.exe: Wej�cie do katalogu `c:/Users/dawid/Desktop/na szybko/muzeum'
+ 
+docker-compose up
+make.exe: Opuszczenie katalogu `c:/Users/dawid/Desktop/na szybko/muzeum'
+ 

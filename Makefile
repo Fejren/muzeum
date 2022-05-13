@@ -1,11 +1,23 @@
 up:
-	python manage.py runserver
+	docker-compose up
 
-migrate:
-	python manage.py migrate
+down:
+	docker-compose down --remove-orphans
 
-migrations:
-	python manage.py makemigrations
+stop:
+	docker-compose stop
+
+build:
+	docker-compose build
 
 admin:
-	python manage.py createsuperuser
+	docker-compose run app python manage.py createsuperuser
+
+test:
+	docker-compose run app python manage.py test core.tests user.tests book.tests
+
+migrations:
+	docker-compose run app python manage.py makemigrations
+
+migrate:
+	docker-compose run app python manage.py migrate
