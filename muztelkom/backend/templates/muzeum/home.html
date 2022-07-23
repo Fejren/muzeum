@@ -1,16 +1,17 @@
 {% extends 'muzeum/base.html' %}
 {% load bootstrap5 %}
 {% load static %}
-    {% block title %}Muzeum Telefonii Komórkowej w Sosnowcu{% endblock %}
 
-    {% block style %}
-            <style>
-            .BackgroundImg-1{
-                background-image: url("{% static 'images/logo1.jpg' %}");
-            }
-    </style>
-        <link href="{% static 'css/home.css' %}" rel="stylesheet">
-    {% endblock %}
+{% block title %}Muzeum Telefonii Komórkowej w Sosnowcu{% endblock %}
+
+{% block style %}
+<style>
+.BackgroundImg-1{
+    background-image: url("{% static 'images/logo1.jpg' %}");
+}
+</style>
+<link href="{% static 'css/home.css' %}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
 <div class="BackgroundImg-1">
