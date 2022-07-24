@@ -1,7 +1,5 @@
 ## Mój pierwszy projekt w Django (MVT)
 
-Miała być to strona Muzeum Telefonii Komórkowej w Sosnowcu
-
 ## Technologie
 Projekt jest stworzony w oparciu o:
 * Python 3.10
