@@ -1,0 +1,44 @@
+{% extends 'muzeum/base.html' %}
+{% load static %}
+{% block content %}
+
+{% if request.user.is_staff %}
+
+<div class="container-fluid" style="min-height: 100vh">
+  <div class="card card-body">
+    <form enctype="multipart/form-data" action="" method="POST">
+      {% csrf_token %}
+      {{ formset.title }}
+      <hr>
+      {{ formset.body }}
+      <hr>
+      Autor: {{ formset.author}}
+      <hr>
+      Status: {{ formset.status }}
+      <hr>
+      {{ formset.picture }}
+      <hr>
+      <input class="btn btn-success" type="submit" name="Submit">
+    </form>
+  </div>
+    {% if articles_count %}
+        <div class="card card-body">
+            Liczba dodanych artykułów: {{ articles_count }}
+            <hr>
+        </div>
+    {% endif %}
+</div>
+  {% else %}
+    <p>Error</p>
+{% endif %}
+
+<script type="text/javascript" src="{% static 'js/article_form/placeholders.js' %}"></script>
+<script src="https://cdn.tiny.cloud/1/s7wet7nsgnwgsevmmwt6hsraemarwkxttrdwwhe6vg2mlyr2/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+    selector: '#id_body',
+    language: 'pl'
+  });
+</script>
+
+{% endblock %}

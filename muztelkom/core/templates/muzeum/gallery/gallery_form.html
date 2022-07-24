@@ -1,0 +1,32 @@
+{% extends 'muzeum/base.html' %}
+{% load static %}
+{% block content %}
+
+{% if request.user.is_staff %}
+<div class="container-fluid" style="margin-top:1rem; min-height: 100vh">
+    <div class="card card-body">
+        <form action="" method="POST">
+          {% csrf_token %}
+          {{ formset.management_form }}
+          Marka telefonu: {{ formset.mark }}
+          <hr>
+          {{ formset.model }}
+          <hr>
+          {{ formset.picture }}
+          <hr>
+          <input class="btn btn-success" type="submit" name="Submit">
+        </form>
+    </div>
+    </div>
+    {% if phones_count %}
+        <div class="card card-body">
+        Liczba dodanych telefonów: {{ phones_count }}
+        <hr>
+        Do tego telefonu będzie potrzebne zdjęcie {{ last_id }}.png
+        </div>
+    {% endif %}
+{% else %}
+  <p>Error</p>
+{% endif %}
+<script type="text/javascript" src="{% static 'js/gallery/placeholders.js' %}"></script>
+{% endblock %}
