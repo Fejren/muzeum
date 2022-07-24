@@ -1,45 +1,33 @@
 {% extends 'muzeum/base.html' %}
 {% load static %}
 {% block content %}
-<style>
-.phCard{
-  margin-top: 1rem;
-}
-</style>
-{% if request.user.is_staff %}
-  <div class="container-fluid" style="min-height: 100vh">
-    {% if articles_count %}
-      <div class="row">
-        <div class="col">
-          <div class="phCard card card-body">
-            <form enctype="multipart/form-data" action="" method="POST">
-              {% csrf_token %}
-              {{ formset.title }}
-              <hr>
-              {{ formset.body }}
-              <hr>
-              Autor: {{ formset.author}}
-              <hr>
-              Status: {{ formset.status }}
-              <hr>
-              {{ formset.picture }}
-              <hr>
-              <input class="btn btn-success" type="submit" name="Submit">
-            </form>
-          </div>
-        </div>
-        <div class="col">
-          <div class="phCard card card-body">
-           Liczba dodanych artykułów: {{ articles_count }}
-            <hr>
-          </div>
-        </div>
-      </div>
 
-  {% else %}
-    <h1 class="text-center" style="color: white; margin-top: 1rem;">Pierwszy artykuł należy dodać w panelu administratora</h1>
-  {% endif %}
-    </div>
+{% if request.user.is_staff %}
+
+<div class="container-fluid" style="min-height: 100vh">
+  <div class="card card-body">
+    <form enctype="multipart/form-data" action="" method="POST">
+      {% csrf_token %}
+      {{ formset.title }}
+      <hr>
+      {{ formset.body }}
+      <hr>
+      Autor: {{ formset.author}}
+      <hr>
+      Status: {{ formset.status }}
+      <hr>
+      {{ formset.picture }}
+      <hr>
+      <input class="btn btn-success" type="submit" name="Submit">
+    </form>
+  </div>
+    {% if articles_count %}
+        <div class="card card-body">
+            Liczba dodanych artykułów: {{ articles_count }}
+            <hr>
+        </div>
+    {% endif %}
+</div>
   {% else %}
     <p>Error</p>
 {% endif %}

@@ -26,10 +26,10 @@ def gallery(request):
 
 def create_phone(request):
     count_of_phones = Phone.objects.count()
-    if count_of_phones > 0:
+    if count_of_phones:
         last_id = Phone.objects.last().id+1
     else:
-        last_id = 'Pierwszy telefon należy dodać w panelu administratora'
+        last_id = None
     if request.method == 'POST':
         formset = PhoneForm(request.POST, request.FILES)
         if formset.is_valid():

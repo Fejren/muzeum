@@ -11,6 +11,7 @@
   padding: 8px;
 }
 </style>
+
 <nav class="navbar transparent navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" aria-current="page" href="{% url 'home' %}">MuzTelKom.pl</a>
@@ -43,16 +44,16 @@
         {% if request.user.is_staff %}
           <li class="nav-item">
             {% if request.path == '/createPhone/' %}
-              <a class="nav-link active" href="{% url 'createPhone' %}">Dodaj telefon</a>
+              <a class="nav-link active" href="{% url 'create_phone' %}">Dodaj telefon</a>
             {% else %}
-              <a class="nav-link" href="{% url 'createPhone' %}">Dodaj telefon</a>
+              <a class="nav-link" href="{% url 'create_phone' %}">Dodaj telefon</a>
         {% endif %}
           </li>
           <li class="nav-item">
           {% if request.path == '/createArticle/' %}
-            <a class="nav-link active" href="{% url 'createArticle' %}">Dodaj artykuł</a>
+            <a class="nav-link active" href="{% url 'create_article' %}">Dodaj artykuł</a>
           {% else %}
-            <a class="nav-link" href="{% url 'createArticle' %}">Dodaj artykuł</a>
+            <a class="nav-link" href="{% url 'create_article' %}">Dodaj artykuł</a>
           {% endif %}
           </li>
       {% endif %}
